@@ -1,16 +1,45 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div class="container">
-            <div>
-                <h3>HOME</h3>
-            </div> 
-            <div>
-                <h3>GUEST</h3>
-            </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basketball Scoreboard</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="scoreboard" aria-label="Basketball scoreboard">
+      <!-- Home Panel -->
+      <section class="panel panel--home" aria-labelledby="home-title">
+        <h2 id="home-title" class="panel__title">HOME</h2>
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <span id="home-score" class="score" aria-label="Home score">0</span>
         </div>
-        <script src="index.js"></script>
-    </body>
+        <div class="controls" role="group" aria-label="Add points for home">
+          <button class="btn" data-team="home" data-points="1" aria-label="Add 1 point to home">+1</button>
+          <button class="btn" data-team="home" data-points="2" aria-label="Add 2 points to home">+2</button>
+          <button class="btn" data-team="home" data-points="3" aria-label="Add 3 points to home">+3</button>
+        </div>
+      </section>
+
+      <!-- Guest Panel -->
+      <section class="panel panel--guest" aria-labelledby="guest-title">
+        <h2 id="guest-title" class="panel__title">GUEST</h2>
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <span id="guest-score" class="score" aria-label="Guest score">0</span>
+        </div>
+        <div class="controls" role="group" aria-label="Add points for guest">
+          <button class="btn" data-team="guest" data-points="1" aria-label="Add 1 point to guest">+1</button>
+          <button class="btn" data-team="guest" data-points="2" aria-label="Add 2 points to guest">+2</button>
+          <button class="btn" data-team="guest" data-points="3" aria-label="Add 3 points to guest">+3</button>
+        </div>
+      </section>
+
+      <!-- Global actions -->
+      <div class="actions" aria-label="Scoreboard actions">
+        <button id="reset-btn" class="btn btn--reset" type="button" aria-label="Start a new game">New Game</button>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
 </html>
