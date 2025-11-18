@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Basketball Scoreboard</title>
+    <title>NBA Basketball Scoreboard</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -11,6 +11,10 @@
       <!-- Home Panel -->
       <section class="panel panel--home" aria-labelledby="home-title">
         <h2 id="home-title" class="panel__title">HOME</h2>
+        <div class="totals" aria-label="Home total score">
+          <span class="totals__label">Total</span>
+          <span id="home-total" class="totals__value">0</span>
+        </div>
         <div class="display" aria-live="polite" aria-atomic="true">
           <span id="home-score" class="score" aria-label="Home score">0</span>
         </div>
@@ -24,6 +28,10 @@
       <!-- Guest Panel -->
       <section class="panel panel--guest" aria-labelledby="guest-title">
         <h2 id="guest-title" class="panel__title">GUEST</h2>
+        <div class="totals" aria-label="Guest total score">
+          <span class="totals__label">Total</span>
+          <span id="guest-total" class="totals__value">0</span>
+        </div>
         <div class="display" aria-live="polite" aria-atomic="true">
           <span id="guest-score" class="score" aria-label="Guest score">0</span>
         </div>
@@ -34,10 +42,102 @@
         </div>
       </section>
 
+      <!-- Current Period Indicator (centered between Home and Guest) -->
+      <section class="period" aria-label="Current period">
+        <h3 style="margin-bottom: 4px;">Current Period</h3>
+        <div id="current-period" class="period__value">Q1</div>
+      </section>
+
       <!-- Global actions -->
       <div class="actions" aria-label="Scoreboard actions">
         <button id="reset-btn" class="btn btn--reset" type="button" aria-label="Start a new game">New Game</button>
       </div>
+
+      <!-- Quarter Timer and Scores -->
+      <section class="timers" aria-label="Timers" style="grid-column: 1 / -1;">
+        <div class="timer-block" aria-label="Quarter timer">
+          <h3>Quarter Timer (12:00)</h3>
+          <div id="quarter-time" class="timer-display" aria-live="polite">00:00</div>
+          <div class="timer-controls">
+            <button id="quarter-start" class="btn" type="button">Start/Pause Quarter</button>
+            <button id="quarter-reset" class="btn" type="button">Record & Reset Quarter</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="quarter-table" aria-label="Quarter scores" style="grid-column: 1 / -1;">
+        <h3>Quarter Scores</h3>
+        <table aria-label="Quarter scores table">
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Q1</th>
+              <th>Q2</th>
+              <th>Q3</th>
+              <th>Q4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Home</td>
+              <td id="home-q1">-</td>
+              <td id="home-q2">-</td>
+              <td id="home-q3">-</td>
+              <td id="home-q4">-</td>
+            </tr>
+            <tr>
+              <td>Guest</td>
+              <td id="guest-q1">-</td>
+              <td id="guest-q2">-</td>
+              <td id="guest-q3">-</td>
+              <td id="guest-q4">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Overtime Timer and Scores -->
+      <section class="timers" aria-label="Overtime timer" style="grid-column: 1 / -1;">
+        <div class="timer-block" aria-label="Overtime timer">
+          <h3>Overtime Timer (5:00)</h3>
+          <div id="overtime-time" class="timer-display" aria-live="polite">00:00</div>
+          <div class="timer-controls">
+            <button id="overtime-start" class="btn" type="button">Start/Pause Overtime</button>
+            <button id="overtime-reset" class="btn" type="button">Record & Reset Overtime</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="overtime-table" aria-label="Overtime scores" style="grid-column: 1 / -1;">
+        <h3>Overtime Scores</h3>
+        <table aria-label="Overtime scores table">
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>OT1</th>
+              <th>OT2</th>
+              <th>OT3</th>
+              <th>OT4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Home</td>
+              <td id="home-ot1">-</td>
+              <td id="home-ot2">-</td>
+              <td id="home-ot3">-</td>
+              <td id="home-ot4">-</td>
+            </tr>
+            <tr>
+              <td>Guest</td>
+              <td id="guest-ot1">-</td>
+              <td id="guest-ot2">-</td>
+              <td id="guest-ot3">-</td>
+              <td id="guest-ot4">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
 
     <script type="module" src="./index.js"></script>
