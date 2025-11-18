@@ -60,6 +60,9 @@ resetBtn.addEventListener('click', () => {
   }
   if (overtimeResetBtn) overtimeResetBtn.disabled = false;
   currentOvertime = 1;
+
+  periodMode = 'quarter';
+  renderCurrentPeriod();
 });
 
 // Decide which team is leading and toggle highlight class
