@@ -1,51 +1,8 @@
 // Find the Home score element once so we can update it on clicks
 const homeScoreEl = document.getElementById('home-score');
 
-// When the Home "+1" button is clicked, increment the Home score by 1
-document
-  .querySelector('button[data-team="home"][data-points="1"]')
-  .addEventListener('click', () => {
-    homeScoreEl.textContent = Number(homeScoreEl.textContent) + 1;
-  });
-
-// When the Home "+2" button is clicked, increment the Home score by 2
-document
-  .querySelector('button[data-team="home"][data-points="2"]')
-  .addEventListener('click', () => {
-    homeScoreEl.textContent = Number(homeScoreEl.textContent) + 2;
-  });
-
-// When the Home "+3" button is clicked, increment the Home score by 3
-document
-  .querySelector('button[data-team="home"][data-points="3"]')
-  .addEventListener('click', () => {
-    homeScoreEl.textContent = Number(homeScoreEl.textContent) + 3;
-  });
-
 // Find the Guest score element once so we can update it on clicks
 const guestScoreEl = document.getElementById('guest-score');
-
-// Guest "+1": increment Guest score by 1
-document
-  .querySelector('button[data-team="guest"][data-points="1"]')
-  .addEventListener('click', () => {
-    guestScoreEl.textContent = Number(guestScoreEl.textContent) + 1;
-  });
-
-// Guest "+2": increment Guest score by 2
-document
-  .querySelector('button[data-team="guest"][data-points="2"]')
-  .addEventListener('click', () => {
-    guestScoreEl.textContent = Number(guestScoreEl.textContent) + 2;
-  });
-
-// Guest "+3": increment Guest score by 3
-document
-  .querySelector('button[data-team="guest"][data-points="3"]')
-  .addEventListener('click', () => {
-    guestScoreEl.textContent = Number(guestScoreEl.textContent) + 3;
-    updateLeader();
-  });
 
 // Reset button: set both scores back to 0 when clicked
 const resetBtn = document.getElementById('reset-btn');
