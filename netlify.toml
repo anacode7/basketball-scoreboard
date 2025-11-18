@@ -1,6 +1,6 @@
 [build]
-command = "npm install && npm run build"
+command = "yarn install --immutable && yarn build"
 publish = "dist"
 
 [build.environment]
-NODE_VERSION = "20"
+NODE_VERSION = "22"
