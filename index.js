@@ -65,3 +65,9 @@ document
     guestScoreEl.textContent = Number(guestScoreEl.textContent) + 2;
     updateLeader();
   });
+document
+  .querySelector('button[data-team="guest"][data-points="3"]')
+  .addEventListener('click', () => {
+    guestScoreEl.textContent = Number(guestScoreEl.textContent) + 3;
+    updateLeader();
+  });
