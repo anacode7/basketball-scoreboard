@@ -1,5 +1,5 @@
 [build]
-command = "yarn install --immutable=false && yarn build"
+command = "yarn install && yarn build"
 publish = "dist"
 
 [build.environment]
